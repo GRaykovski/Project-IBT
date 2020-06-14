@@ -8,14 +8,35 @@
   <title>Blog</title>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="btn btn-success ml-2 mt-3" href="/articles/new">New Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-dark ml-2 mt-3" href="/users/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-dark ml-2 mt-3" href="/users/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <form action="users/logout?_method=DELETE" method="POST" class="d-inline">
+              <button type="submit" class="btn btn-danger ml-2 mt-3">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
-    <h1 class="mb-4">Blog Articles</h1>
-    <a href="/articles/new" class="btn btn-success">New Article</a>
-    <a href="/users/login" class="btn btn-dark ">Login</a>
-    <a href="/users/register" class="btn btn-dark ">Register</a>
-    <form action="users/logout?_method=DELETE" method="POST" class="d-inline">
-      <button type="submit">Log Out</button>
-    </form>
+    <h1 class="site-heading mt-3">Blog Articles</h1>
     <% articles.forEach(article => { %>
       <div class="card mt-4">
         <div class="card-body">
